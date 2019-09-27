@@ -1,8 +1,7 @@
 <template>
   <div>
     <el-card class="login-form-layout">
-      <el-form autoComplete="on"
-               :model="loginForm"
+      <el-form :model="loginForm"
                :rules="loginRules"
                ref="loginForm"
                label-position="left">
@@ -14,7 +13,6 @@
           <el-input name="username"
                     type="text"
                     v-model="loginForm.username"
-                    autoComplete="on"
                     placeholder="请输入用户名">
           <span slot="prefix">
             <svg-icon icon-class="user" class="color-main"></svg-icon>
@@ -26,12 +24,11 @@
                     :type="pwdType"
                     @keyup.enter.native="handleLogin"
                     v-model="loginForm.password"
-                    autoComplete="on"
                     placeholder="请输入密码">
           <span slot="prefix">
             <svg-icon icon-class="password" class="color-main"></svg-icon>
           </span>
-            <span slot="suffix" @click="showPwd">
+          <span slot="suffix" @click="showPwd">
             <svg-icon icon-class="eye" class="color-main"></svg-icon>
           </span>
           </el-input>
